@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Design tokens from the README */
+@theme {
+  --color-primary-blue: #3157f6;
+  --color-primary-blue-light: #e2e8ff;
+  --color-primary-yellow: #e9d659;
+  --color-secondary-yellow: #ffee7e;
+  --color-primary-orange: #ff704d;
+
+  --color-text-primary: #171b2c;
+  --color-text-secondary: #656770;
+  --color-text-tertiary: #6d7384;
+  --color-text-white: #ffffff;
+
+  --color-background-white: #ffffff;
+  --color-background-orange: #ffcb9f;
+  --color-background-yellow: #fff1c2;
+  --color-background-light-yellow: #f9f8f3;
+  --color-background-darkblue: #171b2c;
+
+  --color-line-1: #dbdfeb;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-white text-text-primary font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-heading text-text-primary;
+  }
+
+  :focus-visible {
+    @apply outline-primary-blue outline-2 outline-offset-2;
+  }
+}
+
+/* Light animations: only transform + opacity, so they stay cheap on weak devices */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-float {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
