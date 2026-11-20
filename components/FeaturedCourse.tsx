@@ -19,7 +19,7 @@ export default function FeaturedCourse() {
           <Photo
             image={featuredCourseImage}
             alt="Designer working at a desk with paper prototypes, a cutting mat and trays of colorful parts"
-            className="aspect-[4/3] w-full rounded-2xl"
+            className="aspect-4/3 w-full rounded-2xl"
           />
           <span className="bg-secondary-yellow text-text-primary absolute -top-3 left-4 rounded px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase">
             Featured course

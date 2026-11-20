@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="animate-fade-up relative order-first mx-auto w-full max-w-md pr-4 lg:order-last lg:max-w-none lg:pr-6">
           <div
             aria-hidden="true"
-            className="bg-background-orange absolute top-4 -right-0 h-full w-[calc(100%-1rem)] rounded-3xl lg:w-[calc(100%-1.5rem)]"
+            className="bg-background-orange absolute top-4 right-0 h-full w-[calc(100%-1rem)] rounded-3xl lg:w-[calc(100%-1.5rem)]"
           />
           <div
             aria-hidden="true"
@@ -24,7 +24,7 @@ export default function Hero() {
             image={heroLearner}
             eager
             alt="Smiling learner with glasses and a denim shirt in front of a wall of colorful sticky notes"
-            className="relative aspect-[4/3.2] w-full rounded-3xl lg:aspect-[4/4]"
+            className="relative aspect-[4/3.2] w-full rounded-3xl lg:aspect-4/4"
           />
 
           <div className="bg-background-white absolute top-5 left-4 flex items-center gap-2 rounded-lg px-3 py-2 text-xs shadow-sm">
