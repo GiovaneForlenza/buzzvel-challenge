@@ -1,18 +1,93 @@
+import graduate from "@/assets/images/people-graduate-diploma.jpg";
+import onlineClass from "@/assets/images/people-online-class.jpg";
+import studentBackpack from "@/assets/images/people-student-backpack.jpg";
+import studentLaptop from "@/assets/images/people-student-laptop.jpg";
+import studentNotebook from "@/assets/images/people-student-notebook.jpg";
+import outdoorPortrait from "@/assets/images/people-student-outdoor-portrait.jpg";
+import studentReading from "@/assets/images/people-student-reading.jpg";
+import studentStudying from "@/assets/images/people-student-studying.jpg";
+import studentsGroup from "@/assets/images/people-students-group.jpg";
+import studyPair from "@/assets/images/people-study-pair.jpg";
 import Button from "./Button";
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
-import PlaceholderImage from "./PlaceholderImage";
+import Photo from "./Photo";
 import Reveal from "./Reveal";
 
-/** Each column is a list of aspect ratios, to get a staggered collage. */
+/** Staggered collage: each column has a vertical offset and a list of photos with their shape. */
 const columns = [
-  { offset: "mt-8", ratios: ["aspect-[4/5]", "aspect-square", "aspect-[4/5]"] },
+  {
+    offset: "mt-12",
+    photos: [
+      {
+        image: studentNotebook,
+        ratio: "aspect-[4/5]",
+        alt: "Student smiling and writing in a notebook at a desk",
+      },
+      {
+        image: studyPair,
+        ratio: "aspect-square",
+        style: "border border-red-500 h-[207px] w-[138px]",
+        alt: "Two students studying together at a table with books",
+      },
+    ],
+  },
   {
     offset: "mt-0",
-    ratios: ["aspect-square", "aspect-[3/4]", "aspect-square"],
+    photos: [
+      {
+        image: studentReading,
+        ratio: "aspect-square",
+        alt: "Student reading a book next to a window",
+      },
+      {
+        image: studentsGroup,
+        ratio: "aspect-square",
+        alt: "Group of international students laughing together",
+      },
+
+      {
+        image: studentStudying,
+        ratio: "aspect-square",
+        alt: "Student reading a book next to a window",
+      },
+    ],
   },
-  { offset: "mt-6", ratios: ["aspect-[3/4]", "aspect-square", "aspect-[4/5]"] },
-  { offset: "mt-2", ratios: ["aspect-[4/5]", "aspect-[4/5]", "aspect-square"] },
+  {
+    offset: "mt-6",
+    photos: [
+      {
+        image: graduate,
+        ratio: "aspect-[3/4]",
+        alt: "Graduate in a cap and gown holding a diploma",
+      },
+      {
+        image: studentLaptop,
+        ratio: "aspect-[4/5]",
+        alt: "Student working on a laptop at a desk",
+      },
+      {
+        image: onlineClass,
+        ratio: "aspect-square",
+        alt: "Woman attending an online class on a laptop video call",
+      },
+    ],
+  },
+  {
+    offset: "mt-2",
+    photos: [
+      {
+        image: outdoorPortrait,
+        ratio: "aspect-[4/5]",
+        alt: "Smiling woman with curly hair posing outdoors",
+      },
+      {
+        image: studentBackpack,
+        ratio: "aspect-[4/5]",
+        alt: "Smiling student carrying a backpack on campus",
+      },
+    ],
+  },
 ];
 
 export default function People() {
@@ -46,17 +121,18 @@ export default function People() {
             aria-hidden="true"
             className="bg-primary-blue-light absolute inset-x-6 -top-6 -bottom-6 rounded-full lg:inset-x-10"
           />
-          <div className="relative grid grid-cols-4 gap-2 px-6 sm:gap-3 lg:px-10">
+          <div className="relative grid grid-cols-4 gap-1 border px-6 sm:gap-3 lg:px-10">
             {columns.map((column, columnIndex) => (
               <div
                 key={columnIndex}
-                className={`flex flex-col gap-2 sm:gap-3 ${column.offset}`}
+                className={`flex flex-col items-end gap-2 border sm:gap-3 ${column.offset}`}
               >
-                {column.ratios.map((ratio, imageIndex) => (
-                  <PlaceholderImage
-                    key={imageIndex}
-                    alt="Student or teacher"
-                    className={`${ratio} w-full rounded-lg`}
+                {column.photos.map((photo) => (
+                  <Photo
+                    key={photo.alt}
+                    image={photo.image}
+                    alt={photo.alt}
+                    className={`${photo.ratio} ${photo.style} h-37.5 w-20 rounded-lg`}
                   />
                 ))}
               </div>

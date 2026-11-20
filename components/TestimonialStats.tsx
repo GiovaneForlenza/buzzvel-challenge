@@ -1,5 +1,6 @@
+import alexMorgan from "@/assets/images/testimonial-alex-morgan.jpg";
 import Container from "./Container";
-import PlaceholderImage from "./PlaceholderImage";
+import Photo from "./Photo";
 import Reveal from "./Reveal";
 import StatItem from "./StatItem";
 
@@ -26,8 +27,9 @@ export default function TestimonialStats() {
               enough that I actually leave with something I can use.
             </blockquote>
             <figcaption className="mt-8 flex items-center gap-3">
-              <PlaceholderImage
-                alt="Alex Morgan"
+              <Photo
+                image={alexMorgan}
+                alt="Portrait of Alex Morgan, Product Manager"
                 className="size-10 rounded-full"
               />
               <div>

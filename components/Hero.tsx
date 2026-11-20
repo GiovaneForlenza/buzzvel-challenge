@@ -1,9 +1,10 @@
+import heroLearner from "@/assets/images/hero-learner.jpg";
 import { Star } from "lucide-react";
 import AvatarStack from "./AvatarStack";
 import Button from "./Button";
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
-import PlaceholderImage from "./PlaceholderImage";
+import Photo from "./Photo";
 
 export default function Hero() {
   return (
@@ -13,15 +14,17 @@ export default function Hero() {
         <div className="animate-fade-up relative order-first mx-auto w-full max-w-md pr-4 lg:order-last lg:max-w-none lg:pr-6">
           <div
             aria-hidden="true"
-            className="bg-background-orange absolute top-4 right-0 h-full w-[calc(100%-1rem)] rounded-3xl lg:w-[calc(100%-1.5rem)]"
+            className="bg-background-orange absolute top-4 -right-0 h-full w-[calc(100%-1rem)] rounded-3xl lg:w-[calc(100%-1.5rem)]"
           />
           <div
             aria-hidden="true"
             className="bg-primary-blue-light absolute -bottom-6 -left-6 size-24 rounded-full"
           />
-          <PlaceholderImage
-            alt="Learner smiling while studying"
-            className="relative aspect-[4/3.2] w-full rounded-3xl lg:aspect-4/4"
+          <Photo
+            image={heroLearner}
+            eager
+            alt="Smiling learner with glasses and a denim shirt in front of a wall of colorful sticky notes"
+            className="relative aspect-[4/3.2] w-full rounded-3xl lg:aspect-[4/4]"
           />
 
           <div className="bg-background-white absolute top-5 left-4 flex items-center gap-2 rounded-lg px-3 py-2 text-xs shadow-sm">

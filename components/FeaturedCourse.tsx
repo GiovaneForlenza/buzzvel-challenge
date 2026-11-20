@@ -1,8 +1,9 @@
+import featuredCourseImage from "@/assets/images/featured-course-design-workshop.jpg";
 import { ArrowRight } from "lucide-react";
 import Button from "./Button";
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
-import PlaceholderImage from "./PlaceholderImage";
+import Photo from "./Photo";
 import Reveal from "./Reveal";
 
 const details = ["8 lessons", "2h 40min", "Intermediate"];
@@ -15,8 +16,9 @@ export default function FeaturedCourse() {
     >
       <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal className="relative">
-          <PlaceholderImage
-            alt="Product design workshop"
+          <Photo
+            image={featuredCourseImage}
+            alt="Designer working at a desk with paper prototypes, a cutting mat and trays of colorful parts"
             className="aspect-[4/3] w-full rounded-2xl"
           />
           <span className="bg-secondary-yellow text-text-primary absolute -top-3 left-4 rounded px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase">
