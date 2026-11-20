@@ -27,7 +27,7 @@ const columns = [
       {
         image: studyPair,
         ratio: "aspect-square",
-        style: "border border-red-500 h-[207px] w-[138px]",
+        style: "h-[207px] w-[138px]",
         alt: "Two students studying together at a table with books",
       },
     ],
@@ -80,6 +80,7 @@ const columns = [
         image: outdoorPortrait,
         ratio: "aspect-[4/5]",
         alt: "Smiling woman with curly hair posing outdoors",
+        style: "h-[207px] w-[138px]",
       },
       {
         image: studentBackpack,
@@ -121,11 +122,11 @@ export default function People() {
             aria-hidden="true"
             className="bg-primary-blue-light absolute inset-x-6 -top-6 -bottom-6 rounded-full lg:inset-x-10"
           />
-          <div className="relative grid grid-cols-4 gap-1 border px-6 sm:gap-3 lg:px-10">
+          <div className="relative grid grid-cols-4 gap-1 px-6 sm:gap-3 lg:px-10">
             {columns.map((column, columnIndex) => (
               <div
                 key={columnIndex}
-                className={`flex flex-col items-end gap-2 border sm:gap-3 ${column.offset}`}
+                className={`flex flex-col items-end gap-2 sm:gap-3 ${column.offset}`}
               >
                 {column.photos.map((photo) => (
                   <Photo
